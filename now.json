@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "alias": "sdg-events.de",
   "routes": [{ "src": "/events/(?<id>[^/]+)", "dest": "/event?id=$id" }],
   "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }

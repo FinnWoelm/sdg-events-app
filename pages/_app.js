@@ -20,7 +20,7 @@ class MyApp extends App {
     return (
       <Container>
         <Head>
-          <title>My page</title>
+          <title>SDG Events: Veranstaltungen zu Agenda 2030 in Deutschland</title>
         </Head>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
