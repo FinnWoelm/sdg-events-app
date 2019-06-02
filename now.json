@@ -1,4 +1,5 @@
 {
   "version": 2,
-  "routes": [{ "src": "/events/(?<id>[^/]+)", "dest": "/events?id=$id" }]
+  "routes": [{ "src": "/events/(?<id>[^/]+)", "dest": "/events?id=$id" }],
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
