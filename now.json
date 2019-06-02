@@ -1,0 +1,4 @@
+{
+  "version": 2,
+  "routes": [{ "src": "/events/(?<id>[^/]+)", "dest": "/events?id=$id" }]
+}
