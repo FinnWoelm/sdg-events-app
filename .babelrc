@@ -1,4 +1,15 @@
 {
   "presets": ["next/babel"],
-  "plugins": [["styled-components", { "ssr": true }]]
+  "plugins": [
+    ["styled-components", { "ssr": true }],
+    ["module-resolver", {
+      "alias": {
+        "components": "./components",
+        "config": "./config",
+        "helpers": "./helpers",
+        "hocs": "./hocs",
+        "layouts": "./layouts"
+      }
+    }]
+  ]
 }
