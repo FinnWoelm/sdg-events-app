@@ -1,9 +1,17 @@
 import Link from 'next/link'
+import styled from 'styled-components'
+
+const Button = styled.a`
+  background: red;
+  padding: 5px;
+  display: inline-block;
+  margin: 10px;
+`
 
 const EventLink = props => (
   <li>
-    <Link as={`/events/${props.id}`} href={`/event?id=${props.id}`}>
-      <a>{props.title}</a>
+    <Link as={`/events/${props.id}`} href={`/event?id=${props.id}`} passHref>
+      <Button>{props.title}</Button>
     </Link>
   </li>
 )
