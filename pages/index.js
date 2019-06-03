@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import Database from 'models/Database'
 
 const Button = styled.a`
   background: red;
@@ -16,15 +17,23 @@ const EventLink = props => (
   </li>
 )
 
-const Index = () => (
+const Index = props => (
   <div>
     <h1>SDG Events</h1>
     <ul>
-      <EventLink id="123" title="Event SDGs" />
-      <EventLink id="456" title="Ocean Event" />
-      <EventLink id="789" title="SDSN Event" />
+      {props.events.map(event => (
+        <EventLink key={event.id} id={event.id} title={event.title} />
+      ))}
     </ul>
   </div>
 )
+
+Index.getInitialProps = async function() {
+  const events = await Database.fetchUpcomingEvents()
+
+  return {
+    events: events
+  }
+}
 
 export default Index
