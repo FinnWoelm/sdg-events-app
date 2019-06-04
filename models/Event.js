@@ -27,12 +27,23 @@ class Event {
   }
 
   get city() {
-    if(!this.location)
+    const { location } = this
+
+    if(!location)
       return null
 
-    const [,city] = [].concat(this.location.split("\n").pop().match(/[0-9]{5} (.*)/))
+    const isMultiLine = Boolean(location.match("\n"))
 
-    return city
+    // return the last line, minus zip code
+    if(isMultiLine) {
+      const [,city] = [].concat(location.split("\n").pop().match(/[0-9]{5} (.*)/))
+      return city
+    }
+    // return the line, removing any potential zip code
+    else {
+      const [,city] = [].concat(location.match(/(?:[0-9]{5} )?(.*)/))
+      return city
+    }
   }
 
   get day() {
