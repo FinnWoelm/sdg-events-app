@@ -7,6 +7,8 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import styled from 'styled-components'
 
+import EventCardMetaSection from 'components/EventCardMetaSection'
+
 const CardWithFullHeight = styled(Card)`
   height: 100%;
 `
@@ -23,18 +25,6 @@ const DateBox = styled(Box)`
 const CardTitle = styled(Typography)`
   && {
     font-weight: 500;
-  }
-`
-
-const CardMeta = styled(Typography)`
-  && {
-    font-weight: 300;
-    margin: 4px 0;
-  }
-
-  span:not(:first-child):before {
-    content: "•";
-    padding: 0 4px;
   }
 `
 
@@ -66,18 +56,7 @@ const EventCard = ({ event }) => (
               <CardTitle variant='body1'>
                 {event.title}
               </CardTitle>
-              <CardMeta variant='body2' color='textSecondary'>
-                {event.city ? (
-                  <span>
-                    {event.city}
-                  </span>
-                ) : null}
-                {event.time ? (
-                  <span>
-                    {event.time}
-                  </span>
-                ) : null}
-              </CardMeta>
+              <EventCardMetaSection event={event} />
               <Typography variant='body2'>
                 {event.summary}
               </Typography>

@@ -1,4 +1,5 @@
-import GermanDateTime from 'models/GermanDateTime'
+import moment from 'moment'
+import 'moment/locale/de'
 
 class Event {
   constructor({ id, title, url, summary, description, location,
@@ -35,7 +36,14 @@ class Event {
   }
 
   get day() {
-    return GermanDateTime.getDay(this.startDate)
+    return this.startMoment.format('D')
+  }
+
+  get duration() {
+    if(!this.endDate)
+      return null
+
+    return (this.endMoment.diff(this.startMoment, 'days') + 1)
   }
 
   get time() {
@@ -46,19 +54,23 @@ class Event {
   }
 
   get month() {
-    return GermanDateTime.getMonth(this.startDate)
+    return this.startMoment.format("MMMM")
   }
 
   get shortMonth() {
-    return GermanDateTime.getShortMonth(this.startDate)
+    return this.month.substr(0, 3)
   }
 
   get monthWithYear() {
-    return `${this.month} ${this.year}`
+    return this.startMoment.format("MMMM YYYY")
   }
 
-  get year() {
-    return GermanDateTime.getYear(this.startDate)
+  get startMoment() {
+    return moment(this.startDate, "MMMM D, YYYY", 'en', true).locale('de')
+  }
+
+  get endMoment() {
+    return moment(this.endDate, "MMMM D, YYYY", 'en', true).locale('de')
   }
 }
 
