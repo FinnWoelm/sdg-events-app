@@ -38,12 +38,22 @@ const CardMeta = styled(Typography)`
   }
 `
 
+const CardContentWithoutOverflow = styled(CardContent)`
+  && {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+`
+
 const EventCard = ({ event }) => (
   <Grid item xs={12} sm={6} md={4}>
     <CardWithFullHeight elevation={2}>
       <Link as={`/events/${event.id}`} href={`/event?id=${event.id}`} passHref>
         <CardActionAreaWithFullHeight>
-          <CardContent style={{display: 'flex', padding: 0}}>
+          <CardContentWithoutOverflow>
             <DateBox align='center' padding={2.5}>
               <Typography variant='body1' color='primary'>
                 {event.shortMonth}
@@ -52,7 +62,7 @@ const EventCard = ({ event }) => (
                 {event.day}
               </Typography>
             </DateBox>
-            <Box padding={2.5} paddingLeft={0}>
+            <Box padding={2.5} paddingLeft={0} style={{overflow: 'hidden'}}>
               <CardTitle variant='body1'>
                 {event.title}
               </CardTitle>
@@ -72,7 +82,7 @@ const EventCard = ({ event }) => (
                 {event.summary}
               </Typography>
             </Box>
-          </CardContent>
+          </CardContentWithoutOverflow>
         </CardActionAreaWithFullHeight>
       </Link>
     </CardWithFullHeight>
