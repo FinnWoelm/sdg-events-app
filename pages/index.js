@@ -5,9 +5,9 @@ import Typography from '@material-ui/core/Typography'
 
 import Database from 'models/Database'
 import Event from 'models/Event'
-import EventCard from 'components/EventCard'
+import EventGroup from 'components/EventGroup'
 
-const Index = props => (
+const Index = ({ groupedEvents }) => (
   <Container>
     <Box textAlign='center'>
       <Typography variant='h2'>
@@ -19,17 +19,8 @@ const Index = props => (
         &mdash; t&auml;glich aktualisiert
       </Typography>
     </Box>
-    {Object.keys(props.groupedEvents).map(group => (
-      [
-        <Typography variant='h6'>
-          {group}
-        </Typography>,
-        <Grid container spacing={2}>
-          {props.groupedEvents[group].map(event => (
-            <EventCard key={event.id} event={new Event(event)} />
-          ))}
-        </Grid>
-      ]
+    {Object.keys(groupedEvents).map(group => (
+      <EventGroup key={group} title={group} events={groupedEvents[group]} />
     ))}
   </Container>
 )
