@@ -9,7 +9,6 @@ const DATABASE_URL_FOR_UPCOMING_EVENTS = `${DATABASE_URL}#gid=0`
 const SELECT_ALL_FIELDS = "SELECT A, B, C, D, E, F, G, H, I, J"
 
 class Database {
-
   // find a specific event
   static async findEvent(id) {
     const rows = await this.dbQuery({

@@ -57,6 +57,14 @@ class Event {
     return (this.endMoment.diff(this.startMoment, 'days') + 1)
   }
 
+  get hasEndTime() {
+    return Boolean(this.endTime)
+  }
+
+  get hasStartTime() {
+    return Boolean(this.startTime)
+  }
+
   get time() {
     if(!this.startTime)
       return null
@@ -77,11 +85,28 @@ class Event {
   }
 
   get startMoment() {
-    return moment(this.startDate, "MMMM D, YYYY", 'en', true).locale('de')
+    const startTime = this.startTime || '0:00'
+
+    return moment(
+      `${this.startDate} ${startTime}`,
+      "MMMM D, YYYY H:mm",
+      'en',
+      true
+    ).locale('de')
   }
 
   get endMoment() {
-    return moment(this.endDate, "MMMM D, YYYY", 'en', true).locale('de')
+    if(!this.endDate)
+      return null
+
+    const endTime = this.endTime || '0:00'
+
+    return moment(
+      `${this.endDate} ${endTime}`,
+      "MMMM D, YYYY H:mm",
+      'en',
+      true
+    ).locale('de')
   }
 
   get isMultiDay() {

@@ -32,7 +32,6 @@ const CardContentWithoutOverflow = styled(CardContent)`
   && {
     display: flex;
     padding: 0;
-    overflow: hidden;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -41,7 +40,7 @@ const CardContentWithoutOverflow = styled(CardContent)`
 const EventCard = ({ event }) => (
   <Grid item xs={12} sm={6} md={4}>
     <CardWithFullHeight elevation={2}>
-      <Link as={`/events/${event.id}`} href={`/event?id=${event.id}`} passHref>
+      <Link as={`/events/${event.id}`} href={`/EventPage?id=${event.id}`} passHref>
         <CardActionAreaWithFullHeight>
           <CardContentWithoutOverflow>
             <DateBox align='center' padding={2.5}>

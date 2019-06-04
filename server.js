@@ -10,7 +10,7 @@ app.prepare().then(() => {
   const server = express()
 
   server.get('/events/:id', (req, res) => {
-    app.render(req, res, '/event', { id: req.params.id });
+    app.render(req, res, '/EventPage', { id: req.params.id });
   });
 
   server.get('/', (req, res) => {
