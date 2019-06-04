@@ -14,7 +14,7 @@ app.prepare().then(() => {
   });
 
   server.get('/', (req, res) => {
-    app.render(req, res, '/index');
+    app.render(req, res, '/HomePage');
   });
 
   server.get('*', (req, res) => {

@@ -13,6 +13,7 @@ import NotesIcon from '@material-ui/icons/Notes'
 import styled from 'styled-components'
 
 import theme from 'config/theme'
+import withLayout from 'hocs/withLayout'
 import Database from 'models/Database'
 import Event from 'models/Event'
 import EventDate from 'components/EventDate'
@@ -63,8 +64,12 @@ const IconBox = styled(Box)`
 const PaperWithPadding = styled(Paper)`
   padding: 16px;
 
-  ${theme.breakpoints.up('md')} {
+  ${theme.breakpoints.up('sm')} {
     padding: 32px;
+  }
+
+  ${theme.breakpoints.up('md')} {
+    padding: 48px;
   }
 
   ${theme.breakpoints.up('lg')} {
@@ -91,61 +96,59 @@ const ActionArea = styled(Box)`
 
 const EventPage = ({ event }) => (
   <Container>
-    <Box my={2}>
-      <PaperWithPadding>
-        <Title variant='h2' gutterBottom>
-          {event.title}
-        </Title>
-        <ActionArea py={1} marginTop={5} marginBottom={3}>
-          <ActionButton href={event.url} target='_blank' variant="outlined" color="primary">
-            <CallMadeIcon />
-            Alle Infos
-          </ActionButton>
-          <ActionButton href={event.googleCalendarUrl()} target='_blank' variant="outlined" color="primary">
-            <AddCircleIcon />
-            Google Calendar
-          </ActionButton>
-          <ActionButton href={event.googleMapsUrl()} target='_blank' variant="outlined" color="primary">
-            <MapIcon />
-            Google Maps
-          </ActionButton>
-        </ActionArea>
-        <Date>
-          <IconBox>
-            <TodayIcon />
-          </IconBox>
-          <Box>
-            <Typography variant='body1'>
-              <EventDate event={event} />
-            </Typography>
-          </Box>
-        </Date>
-        <Location>
-          <IconBox>
-            <LocationOnIcon />
-          </IconBox>
-          <Box>
-            <Typography variant='body1'>
-              {event.location.split('\n').map(line => (
-                [<span>{line}</span>, <br/>]
-              ))}
-            </Typography>
-          </Box>
-        </Location>
-        <FlexBox>
-          <IconBox>
-            <NotesIcon />
-          </IconBox>
-          <Box>
-            <Typography variant='body1'>
-              {event.description.split('\n').map(line => (
-                [line, <br/>]
-              ))}
-            </Typography>
-          </Box>
-        </FlexBox>
-      </PaperWithPadding>
-    </Box>
+    <PaperWithPadding>
+      <Title variant='h2' gutterBottom>
+        {event.title}
+      </Title>
+      <ActionArea py={1} marginTop={5} marginBottom={3}>
+        <ActionButton href={event.url} target='_blank' variant="outlined" color="primary">
+          <CallMadeIcon />
+          Alle Infos
+        </ActionButton>
+        <ActionButton href={event.googleCalendarUrl()} target='_blank' variant="outlined" color="primary">
+          <AddCircleIcon />
+          Google Calendar
+        </ActionButton>
+        <ActionButton href={event.googleMapsUrl()} target='_blank' variant="outlined" color="primary">
+          <MapIcon />
+          Google Maps
+        </ActionButton>
+      </ActionArea>
+      <Date>
+        <IconBox>
+          <TodayIcon />
+        </IconBox>
+        <Box>
+          <Typography variant='body1'>
+            <EventDate event={event} />
+          </Typography>
+        </Box>
+      </Date>
+      <Location>
+        <IconBox>
+          <LocationOnIcon />
+        </IconBox>
+        <Box>
+          <Typography variant='body1'>
+            {event.location.split('\n').map(line => (
+              [<span>{line}</span>, <br/>]
+            ))}
+          </Typography>
+        </Box>
+      </Location>
+      <FlexBox>
+        <IconBox>
+          <NotesIcon />
+        </IconBox>
+        <Box>
+          <Typography variant='body1'>
+            {event.description.split('\n').map(line => (
+              [line, <br/>]
+            ))}
+          </Typography>
+        </Box>
+      </FlexBox>
+    </PaperWithPadding>
   </Container>
 )
 
@@ -170,4 +173,4 @@ function hydrate(WrappedComponent) {
   }
 }
 
-export default hydrate(EventPage)
+export default withLayout(hydrate(EventPage))

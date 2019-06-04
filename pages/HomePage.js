@@ -5,23 +5,24 @@ import Typography from '@material-ui/core/Typography'
 import styled from 'styled-components'
 
 import theme from 'config/theme'
+import withLayout from 'hocs/withLayout'
 import Database from 'models/Database'
 import Event from 'models/Event'
 import EventGroup from 'components/EventGroup'
 
 const Hero = styled(Box)`
-  margin-top: 10vh;
+  margin-top: 5vh;
 `
 
 const SearchBar = styled(Box)`
   // position: sticky;
   // top: 0;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 `
 
 const Image = styled.img`
   max-height: 100px;
-  margin: 16px 0;
+  margin-bottom: 16px;
 
   ${theme.breakpoints.up('md')} {
     min-height: 150px;
@@ -66,4 +67,4 @@ Index.getInitialProps = async function() {
   }
 }
 
-export default Index
+export default withLayout(Index)

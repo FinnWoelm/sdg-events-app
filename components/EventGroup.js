@@ -26,9 +26,9 @@ const Title = styled(Typography)`
 `
 
 const EventGroup = ({ title, events }) => (
-  <Box paddingTop={0} paddingBottom={6}>
-    <Box>
-      <Title paddingBottom={2} variant='h4' gutterBottom>
+  <Box marginBottom={8}>
+    <Box marginBottom={3}>
+      <Title variant='h4'>
         {title}
       </Title>
     </Box>
