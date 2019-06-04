@@ -30,7 +30,7 @@ const DurationOrTime = ({ event: { isMultiDay, duration, time } }) => {
 
   return (
     <span>
-      {duration ? `${duration} Tage` : time}
+      {isMultiDay ? `${duration} Tage` : time}
     </span>
   )
 }
