@@ -41,7 +41,7 @@ const Index = ({ groupedEvents }) => (
         Events zu SDGs & Agenda 2030
       </Typography>
       <Typography variant='h4' color='textSecondary' style={{fontWeight: '300'}}>
-        Veranstaltungen von &uuml;ber 60 Organisationen in Deutschland
+        Veranstaltungen von Organisationen in Deutschland
         <br/>
         &mdash; t&auml;glich aktualisiert
       </Typography>
