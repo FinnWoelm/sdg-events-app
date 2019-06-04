@@ -13,18 +13,32 @@ const CardMeta = styled(Typography)`
   }
 `
 
+const City = ({ event: { city } }) => {
+  if(!city)
+    return null;
+
+  return (
+    <span>
+      {city}
+    </span>
+  )
+}
+
+const DurationOrTime = ({ event: { isMultiDay, duration, time } }) => {
+  if(!isMultiDay && !time)
+    return null;
+
+  return (
+    <span>
+      {duration ? `${duration} Tage` : time}
+    </span>
+  )
+}
+
 const EventCardMetaSection = ({ event }) => (
   <CardMeta variant='body2' color='textSecondary'>
-    {event.city ? (
-      <span>
-        {event.city}
-      </span>
-    ) : null}
-    {event.time ? (
-      <span>
-        {event.time}
-      </span>
-    ) : null}
+    <City event={event} />
+    <DurationOrTime event={event} />
   </CardMeta>
 )
 

@@ -72,6 +72,10 @@ class Event {
   get endMoment() {
     return moment(this.endDate, "MMMM D, YYYY", 'en', true).locale('de')
   }
+
+  get isMultiDay() {
+    return this.duration > 1
+  }
 }
 
 export default Event
