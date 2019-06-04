@@ -40,8 +40,8 @@ const CardContentWithoutOverflow = styled(CardContent)`
 const EventCard = ({ event }) => (
   <Grid item xs={12} sm={6} md={4}>
     <CardWithFullHeight elevation={2}>
-      <Link as={`/events/${event.id}`} href={`/EventPage?id=${event.id}`} passHref>
-        <CardActionAreaWithFullHeight>
+      <Link as={`/events/${event.slug}/${event.id}`} href={`/EventPage?id=${event.id}`} passHref>
+        <CardActionAreaWithFullHeight focusRipple>
           <CardContentWithoutOverflow>
             <DateBox align='center' padding={2.5}>
               <Typography variant='body1' color='primary'>

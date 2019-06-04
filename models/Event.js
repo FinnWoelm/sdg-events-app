@@ -1,6 +1,7 @@
 import moment from 'moment'
 import 'moment/locale/de'
 import buildUrl from 'build-url'
+import slug from 'slug'
 
 class Event {
   constructor({ id, title, url, summary, description, location,
@@ -83,6 +84,11 @@ class Event {
 
   get monthWithYear() {
     return this.startMoment.format("MMMM YYYY")
+  }
+
+  // Slugify title
+  get slug() {
+    return slug(this.title)
   }
 
   get startMoment() {

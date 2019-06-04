@@ -38,10 +38,10 @@ const Time = ({ display, moment, prefix }) => {
 
 const SingleDayDate = ({ event: { startMoment, endMoment, hasStartTime, hasEndTime } }) => (
   <Fragment>
-    <span class='line'>
+    <span className='line'>
       <Date moment={startMoment} />
     </span>
-    <span class='line'>
+    <span className='line'>
       <Time display={hasStartTime} moment={startMoment} prefix={<br/>} />
       <Time display={hasEndTime} moment={endMoment} prefix={' — '} />
     </span>
@@ -50,13 +50,13 @@ const SingleDayDate = ({ event: { startMoment, endMoment, hasStartTime, hasEndTi
 
 const MultiDayDate = ({ event: { startMoment, endMoment, hasStartTime, hasEndTime } }) => (
   <Fragment>
-    <span class='line'>
+    <span className='line'>
       <Date moment={startMoment} />
       <Time display={hasStartTime} moment={startMoment} prefix=', ' />
       {' '}
       &mdash;<br/>
     </span>
-    <span class='line'>
+    <span className='line'>
       <Date moment={endMoment} />
       <Time display={hasEndTime} moment={endMoment} prefix=', ' />
     </span>

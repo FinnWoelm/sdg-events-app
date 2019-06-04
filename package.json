@@ -13,6 +13,7 @@
     "react-dom": "^16.8.6",
     "react-jss": "^8.6.1",
     "sheetrock": "^1.1.4",
+    "slug": "^1.1.0",
     "styled-components": "^4.2.1"
   },
   "scripts": {

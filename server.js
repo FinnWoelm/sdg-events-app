@@ -9,7 +9,7 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
-  server.get('/events/:id', (req, res) => {
+  server.get('/events/:title?/:id', (req, res) => {
     app.render(req, res, '/EventPage', { id: req.params.id });
   });
 
