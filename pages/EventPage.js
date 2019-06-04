@@ -4,8 +4,11 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+import AddCircleIcon from '@material-ui/icons/AddCircle'
+import CallMadeIcon from '@material-ui/icons/CallMade'
 import TodayIcon from '@material-ui/icons/Today'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
+import MapIcon from '@material-ui/icons/Map'
 import NotesIcon from '@material-ui/icons/Notes'
 import styled from 'styled-components'
 
@@ -69,6 +72,18 @@ const PaperWithPadding = styled(Paper)`
   }
 `
 
+const ActionButton = styled(Button)`
+  && {
+    margin-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+`
+
 const ActionArea = styled(Box)`
   border-top: 1px solid rgba(0,0,0,.1);
   border-bottom: 1px solid rgba(0,0,0,.1);
@@ -81,10 +96,19 @@ const EventPage = ({ event }) => (
         <Title variant='h2' gutterBottom>
           {event.title}
         </Title>
-        <ActionArea py={2} marginTop={5} marginBottom={3}>
-          <Button href={event.url} target='_blank' variant="outlined" color="primary">
+        <ActionArea py={1} marginTop={5} marginBottom={3}>
+          <ActionButton href={event.url} target='_blank' variant="outlined" color="primary">
+            <CallMadeIcon />
             Alle Infos
-          </Button>
+          </ActionButton>
+          <ActionButton href={event.googleCalendarUrl()} target='_blank' variant="outlined" color="primary">
+            <AddCircleIcon />
+            Google Calendar
+          </ActionButton>
+          <ActionButton href={event.googleMapsUrl()} target='_blank' variant="outlined" color="primary">
+            <MapIcon />
+            Google Maps
+          </ActionButton>
         </ActionArea>
         <Date>
           <IconBox>

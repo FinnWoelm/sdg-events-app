@@ -1,5 +1,6 @@
 import moment from 'moment'
 import 'moment/locale/de'
+import buildUrl from 'build-url'
 
 class Event {
   constructor({ id, title, url, summary, description, location,
@@ -111,6 +112,52 @@ class Event {
 
   get isMultiDay() {
     return this.duration > 1
+  }
+
+  // return a url for adding the event to Google calendar:
+  // https://github.com/InteractionDesignFoundation/add-event-to-calendar-docs/blob/master/services/google.md
+  googleCalendarUrl() {
+    let dates
+
+    const startDate = this.startMoment.format('YYYYMMDD')
+    const startTime = this.startMoment.format('HHmmSS')
+    let endDate     = this.endMoment.format('YYYYMMDD')
+    let endTime     = this.endMoment.format('HHmmSS')
+
+    // if this is a full day event, end date must be +1
+    if(!this.hasStartTime && !this.hasEndTime) {
+      endDate = this.endMoment.add(1, 'day').format('YYYYMMDD')
+      dates = `${startDate}/${endDate}`
+    }
+    // if no end date exists, set endDate to startDate
+    else {
+      endTime = this.hasEndTime ? endTime : startTime
+      dates = `${startDate}T${startTime}/${endDate}T${endTime}`
+    }
+
+    return buildUrl('https://calendar.google.com/', {
+      path: 'calendar/render',
+      queryParams: {
+        action: 'TEMPLATE',
+        text: this.title,
+        dates: dates,
+        ctz: 'Europe/Berlin',
+        details: this.description,
+        location: this.location
+      }
+    })
+  }
+
+  // return a link to the event location on Google Maps:
+  // https://developers.google.com/maps/documentation/urls/guide#search-action
+  googleMapsUrl() {
+    return buildUrl('https://www.google.com/', {
+      path: 'maps/search/',
+      queryParams: {
+        api: 1,
+        query: this.location.replace(/\n/g, ", ")
+      }
+    })
   }
 }
 
