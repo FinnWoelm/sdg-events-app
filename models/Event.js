@@ -104,7 +104,7 @@ class Event {
 
   get endMoment() {
     if(!this.endDate)
-      return null
+      return this.startMoment
 
     const endTime = this.endTime || '0:00'
 
