@@ -35,8 +35,13 @@ class Database {
     return new Event({
       id: row.cellsArray[0],
       title: row.cellsArray[1],
+      startDate: row.cellsArray[2],
+      startTime: row.cellsArray[3],
+      endDate: row.cellsArray[4],
+      endTime: row.cellsArray[5],
       location: row.cellsArray[6],
       url: row.cellsArray[7],
+      summary: row.cellsArray[8],
       description: row.cellsArray[9],
     })
   }
