@@ -13,6 +13,10 @@ app.prepare().then(() => {
     app.render(req, res, '/EventPage', { id: req.params.id });
   });
 
+  server.get('/ueber-uns', (req, res) => {
+    app.render(req, res, '/AboutPage');
+  });
+
   server.get('/', (req, res) => {
     app.render(req, res, '/HomePage');
   });
