@@ -2,7 +2,6 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
 import CallMadeIcon from '@material-ui/icons/CallMade'
@@ -61,19 +60,19 @@ const IconBox = styled(Box)`
   }
 `
 
-const PaperWithPadding = styled(Paper)`
-  padding: 16px;
+const ContentWrapper = styled(Box)`
+  margin: 16px 0;
 
   ${theme.breakpoints.up('sm')} {
-    padding: 32px;
+    margin: 32px 0;
   }
 
   ${theme.breakpoints.up('md')} {
-    padding: 48px;
+    margin: 48px 0;
   }
 
   ${theme.breakpoints.up('lg')} {
-    padding: 64px;
+    margin: 64px 0;
   }
 `
 
@@ -96,7 +95,7 @@ const ActionArea = styled(Box)`
 
 const EventPage = ({ event }) => (
   <Container>
-    <PaperWithPadding>
+    <ContentWrapper>
       <Title variant='h2' gutterBottom>
         {event.title}
       </Title>
@@ -148,7 +147,7 @@ const EventPage = ({ event }) => (
           </Typography>
         </Box>
       </FlexBox>
-    </PaperWithPadding>
+    </ContentWrapper>
   </Container>
 )
 

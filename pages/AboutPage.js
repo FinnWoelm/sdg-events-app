@@ -1,22 +1,10 @@
 import Box from '@material-ui/core/Box'
-import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import AddCircleIcon from '@material-ui/icons/AddCircle'
-import CallMadeIcon from '@material-ui/icons/CallMade'
-import TodayIcon from '@material-ui/icons/Today'
-import LocationOnIcon from '@material-ui/icons/LocationOn'
-import MapIcon from '@material-ui/icons/Map'
-import NotesIcon from '@material-ui/icons/Notes'
 import styled from 'styled-components'
 
 import theme from 'config/theme'
 import withLayout from 'hocs/withLayout'
-import Database from 'models/Database'
-import Event from 'models/Event'
-import EventDate from 'components/EventDate'
 
 const List = styled(Typography).attrs({
   variant: 'body1',
@@ -31,82 +19,31 @@ const ListItem = styled.li`
   margin-bottom: 10px;
 `
 
-const Title = styled(Typography)`
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-`
-
-const FlexBox = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  padding: 20px 0;
-`
-
-const Date = styled(FlexBox)`
-  .line:first-child {
-    font-weight: 500;
-  }
-
-  .line:not(:first-child) {
-    color: ${theme.palette.text.secondary};
-  }
-`
-
 const Section = styled(Box).attrs({marginTop: 3})`
-
 `
 
-const IconBox = styled(Box)`
-  max-width: 50px;
-  min-width: 50px;
-  width: 50px;
-
-  svg {
-    width: 30px;
-    height: auto;
-    color: ${theme.palette.primary.main};
-  }
-`
-
-const PaperWithPadding = styled(Paper)`
-  padding: 16px;
+const ContentWrapper = styled(Box)`
+  margin: 16px 0;
 
   ${theme.breakpoints.up('sm')} {
-    padding: 32px;
+    margin: 32px 0;
   }
 
   ${theme.breakpoints.up('md')} {
-    padding: 48px;
+    margin: 48px 0;
   }
 
   ${theme.breakpoints.up('lg')} {
-    padding: 64px;
+    margin: 64px 0;
   }
-`
-
-const ActionButton = styled(Button)`
-  && {
-    margin-right: 16px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
-
-  svg {
-    margin-right: 8px;
-  }
-`
-
-const ActionArea = styled(Box)`
-  border-top: 1px solid rgba(0,0,0,.1);
-  border-bottom: 1px solid rgba(0,0,0,.1);
 `
 
 const AboutPage = ({ event }) => (
   <Container>
-    <PaperWithPadding>
-      <Title variant='h2' gutterBottom>
+    <ContentWrapper>
+      <Typography variant='h2' gutterBottom>
         &Uuml;ber uns
-      </Title>
+      </Typography>
       <Section>
         <Typography variant='body1' gutterBottom>
           SDG Events ist eine Sammlung von Veranstaltungen zum
@@ -136,12 +73,12 @@ const AboutPage = ({ event }) => (
         </Typography>
       </Section>
       <Section>
-        <Title variant='h4' gutterBottom>
+        <Typography variant='h4' gutterBottom>
           Warum?
-        </Title>
+        </Typography>
         <Typography variant='body1' gutterBottom>
-          SDG Events ist w&auml;hrend meiner Suche nach spannenden Veranstaltungen rund
-  um die Agenda 2030 entstanden.
+          SDG Events ist w&auml;hrend meiner Suche nach spannenden
+          Veranstaltungen rund um die Agenda 2030 entstanden.
 
           <br/><br/>
 
@@ -160,9 +97,9 @@ const AboutPage = ({ event }) => (
         </Typography>
       </Section>
       <Section>
-        <Title variant='h4' gutterBottom>
+        <Typography variant='h4' gutterBottom>
           Wie funktioniert es?
-        </Title>
+        </Typography>
         <Typography variant='body1' gutterBottom>
           Das Projekt setzt sich aus drei halb-automatischen Komponenten zusammen:
         </Typography>
@@ -212,9 +149,9 @@ const AboutPage = ({ event }) => (
         </Typography>
       </Section>
       <Section>
-        <Title variant='h4' gutterBottom>
+        <Typography variant='h4' gutterBottom>
           Feedback & Mitmachen
-        </Title>
+        </Typography>
         <Typography variant='body1' gutterBottom>
           Hast du eine Idee, um die Seite besser zu machen?
           Hat die Webseite dir geholfen?
@@ -232,7 +169,7 @@ const AboutPage = ({ event }) => (
           erreichen.
         </Typography>
       </Section>
-    </PaperWithPadding>
+    </ContentWrapper>
   </Container>
 )
 
