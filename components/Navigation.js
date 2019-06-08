@@ -46,7 +46,7 @@ const ToolbarButton = styled(ButtonBase).attrs({
   }
 `
 
-const HiddenFlex = styled(Hidden)`
+const Flex = styled.div`
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
@@ -89,15 +89,17 @@ class Navigation extends Component {
               </Typography>
             </ToolbarButton>
           </Link>
-          <HiddenFlex implementation="css" smDown>
-            <Link as='/ueber-uns' href='/AboutPage' passHref>
-              <ToolbarButton>
-                <Typography variant="h6" color="inherit">
-                  &Uuml;ber uns
-                </Typography>
-              </ToolbarButton>
-            </Link>
-          </HiddenFlex>
+          <Flex>
+            <Hidden implementation="css" smDown>
+              <Link as='/ueber-uns' href='/AboutPage' passHref>
+                <ToolbarButton>
+                  <Typography variant="h6" color="inherit">
+                    &Uuml;ber uns
+                  </Typography>
+                </ToolbarButton>
+              </Link>
+            </Hidden>
+          </Flex>
         </Toolbar>
         <SideBar open={isDrawerOpen} onClose={this.closeDrawer}/>
       </SiteHeader>
