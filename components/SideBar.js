@@ -19,6 +19,11 @@ const SideBar = ({ open, onClose }) => (
           <ListItemText primary="Alle Events" />
         </ListItem>
       </Link>
+      <Link as='/organisationen' href='/OrganizationsPage' passHref>
+        <ListItem button component='a'>
+          <ListItemText primary="Organisationen" />
+        </ListItem>
+      </Link>
       <Link as='/ueber-uns' href='/AboutPage' passHref>
         <ListItem button component='a'>
           <ListItemText primary="Über uns" />

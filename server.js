@@ -17,6 +17,10 @@ app.prepare().then(() => {
     app.render(req, res, '/AboutPage');
   });
 
+  server.get('/organisationen', (req, res) => {
+    app.render(req, res, '/OrganizationsPage');
+  });
+
   server.get('/', (req, res) => {
     app.render(req, res, '/HomePage');
   });

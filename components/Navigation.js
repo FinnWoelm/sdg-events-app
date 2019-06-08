@@ -91,13 +91,22 @@ class Navigation extends Component {
           </Link>
           <Flex>
             <Hidden implementation="css" smDown>
-              <Link as='/ueber-uns' href='/AboutPage' passHref>
-                <ToolbarButton>
-                  <Typography variant="h6" color="inherit">
-                    &Uuml;ber uns
-                  </Typography>
-                </ToolbarButton>
-              </Link>
+              <div style={{display: 'flex', flexDirection: 'row'}}>
+                <Link as='/organisationen' href='/OrganizationsPage' passHref>
+                  <ToolbarButton>
+                    <Typography variant="h6" color="inherit">
+                      Organisationen
+                    </Typography>
+                  </ToolbarButton>
+                </Link>
+                <Link as='/ueber-uns' href='/AboutPage' passHref>
+                  <ToolbarButton>
+                    <Typography variant="h6" color="inherit">
+                      &Uuml;ber uns
+                    </Typography>
+                  </ToolbarButton>
+                </Link>
+              </div>
             </Hidden>
           </Flex>
         </Toolbar>
