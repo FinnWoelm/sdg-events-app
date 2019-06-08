@@ -67,7 +67,7 @@ const AboutPage = ({ event }) => (
           {' '}
           <a  href="https://twitter.com/FinnWoelm"
               target="_blank">
-            Finn Woelm
+            Finn W&ouml;lm
           </a>
           .
         </Typography>
