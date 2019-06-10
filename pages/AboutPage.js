@@ -56,18 +56,11 @@ const AboutPage = ({ event }) => (
           <br/><br/>
 
 
-          SDG Events ist ein
+          SDG Events ist ein unabh&auml;ngiges
           {' '}
           <a  href="https://github.com/FinnWoelm/sdg-events-app"
               target="_blank">
             open source Projekt
-          </a>
-          {' '}
-          von
-          {' '}
-          <a  href="https://twitter.com/FinnWoelm"
-              target="_blank">
-            Finn W&ouml;lm
           </a>
           .
         </Typography>
