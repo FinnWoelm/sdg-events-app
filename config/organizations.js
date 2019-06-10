@@ -35,6 +35,11 @@ const organizations = [
     url: 'https://17ziele.de/',
   },
   {
+    name: "Verband Entwicklungspolitik und Humanitäre Hilfe deutscher Nichtregierungsorganisationen e.V.",
+    slug: 'venro',
+    url: 'https://venro.org/',
+  },
+  {
     name: "Konrad Adenauer Stiftung",
     slug: 'kas',
     url: 'https://www.kas.de/',
@@ -53,6 +58,16 @@ const organizations = [
     name: "Global Marshall Plan Foundation",
     slug: 'marshall-plan',
     url: 'https://www.globalmarshallplan.org/',
+  },
+  {
+    name: "Gesellschaft für internationale Entwicklung, Gruppe Frankfurt/Main",
+    slug: 'sid-frankfurt',
+    url: 'https://sid-frankfurt.de/',
+  },
+  {
+    name: "Gesellschaft für internationale Entwicklung, Gruppe Hamburg",
+    slug: 'sid-hamburg',
+    url: 'http://www.sid-hamburg.de/',
   },
 ]
 
