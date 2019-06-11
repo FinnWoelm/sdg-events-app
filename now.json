@@ -5,7 +5,7 @@
     { "src": "/",                                 "dest": "/HomePage" },
     { "src": "/ueber-uns",                        "dest": "/AboutPage" },
     { "src": "/organisationen",                   "dest": "/OrganizationsPage" },
-    { "src": "/events(/?:[^/]+)?/(?<id>[^/]+)",   "dest": "/EventPage?id=$id" }
+    { "src": "/events(?:/[^/]+)?/(?<id>[^/]+)",   "dest": "/EventPage?id=$id" }
   ],
   "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
