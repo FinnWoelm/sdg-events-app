@@ -1,5 +1,10 @@
 const organizations = [
   {
+    name: "Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung",
+    slug: 'bmz',
+    url: 'https://www.bmz.de/',
+  },
+  {
     name: "Engagement Global",
     slug: 'engagement-global',
     url: 'https://www.engagement-global.de/',
@@ -55,6 +60,11 @@ const organizations = [
     url: 'https://www.misereor.de/',
   },
   {
+    name: "Nordische Botschaften  (Dänemark, Finnland, Island, Norwegen und Schweden)",
+    slug: 'nordische-botschaften',
+    url: 'https://www.nordischebotschaften.org/',
+  },
+  {
     name: "Global Marshall Plan Foundation",
     slug: 'marshall-plan',
     url: 'https://www.globalmarshallplan.org/',
@@ -68,6 +78,16 @@ const organizations = [
     name: "Gesellschaft für internationale Entwicklung, Gruppe Hamburg",
     slug: 'sid-hamburg',
     url: 'http://www.sid-hamburg.de/',
+  },
+  {
+    name: "Portal Globales Lernen",
+    slug: 'portal-globales-lernen',
+    url: 'https://www.globaleslernen.de/de',
+  },
+  {
+    name: "Netzwerk Faire Metropole Ruhr",
+    slug: 'faire-metropole-ruhr',
+    url: 'https://www.faire-metropole-ruhr.de/',
   },
 ]
 
