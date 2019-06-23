@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
 import CallMadeIcon from '@material-ui/icons/CallMade'
+import OutlinedFlagIcon from '@material-ui/icons/OutlinedFlag'
 import TodayIcon from '@material-ui/icons/Today'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import MapIcon from '@material-ui/icons/Map'
@@ -88,6 +89,16 @@ const ActionButton = styled(Button)`
   }
 `
 
+const SecondaryActionButton = styled(ActionButton)`
+  && {
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  ${theme.breakpoints.up('md')} {
+    float: right;
+  }
+`
+
 const ActionArea = styled(Box)`
   border-top: 1px solid rgba(0,0,0,.1);
   border-bottom: 1px solid rgba(0,0,0,.1);
@@ -112,6 +123,10 @@ const EventPage = ({ event }) => (
           <MapIcon />
           Google Maps
         </ActionButton>
+        <SecondaryActionButton href={event.reportErrorUrl()} target='_blank' variant="text">
+          <OutlinedFlagIcon />
+          Fehler melden
+        </SecondaryActionButton>
       </ActionArea>
       <Date>
         <IconBox>

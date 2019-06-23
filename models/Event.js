@@ -165,6 +165,17 @@ class Event {
       }
     })
   }
+
+  // return a link to a form for reporting errors with the event
+  reportErrorUrl() {
+    return buildUrl('https://docs.google.com', {
+      path: 'forms/d/e/1FAIpQLScwu1mefEIlspYeCH4jUczbZlikbrK_J1OR84019Re01Bx9Yg/viewform',
+      queryParams: {
+        "entry.1626933505": this.id,
+        "entry.1812445238": this.title,
+      }
+    })
+  }
 }
 
 export default Event
