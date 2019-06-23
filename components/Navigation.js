@@ -92,13 +92,6 @@ class Navigation extends Component {
           <Flex>
             <Hidden implementation="css" smDown>
               <div style={{display: 'flex', flexDirection: 'row'}}>
-                <Link as='/organisationen' href='/OrganizationsPage' passHref>
-                  <ToolbarButton>
-                    <Typography variant="h6" color="inherit">
-                      Organisationen
-                    </Typography>
-                  </ToolbarButton>
-                </Link>
                 <Link as='/ueber-uns' href='/AboutPage' passHref>
                   <ToolbarButton>
                     <Typography variant="h6" color="inherit">
@@ -106,6 +99,20 @@ class Navigation extends Component {
                     </Typography>
                   </ToolbarButton>
                 </Link>
+                <Link as='/organisationen' href='/OrganizationsPage' passHref>
+                  <ToolbarButton>
+                    <Typography variant="h6" color="inherit">
+                      Organisationen
+                    </Typography>
+                  </ToolbarButton>
+                </Link>
+                <ToolbarButton
+                  target='_blank'
+                  href='https://docs.google.com/forms/d/e/1FAIpQLScckSkwEbDhGi5jjKB3OvYdrncpcWU6H7e_lgr7458siHCR5Q/viewform'>
+                  <Typography variant="h6" color="inherit">
+                    Event eintragen
+                  </Typography>
+                </ToolbarButton>
               </div>
             </Hidden>
           </Flex>

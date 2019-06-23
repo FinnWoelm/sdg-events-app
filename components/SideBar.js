@@ -19,16 +19,22 @@ const SideBar = ({ open, onClose }) => (
           <ListItemText primary="Alle Events" />
         </ListItem>
       </Link>
-      <Link as='/organisationen' href='/OrganizationsPage' passHref>
-        <ListItem button component='a'>
-          <ListItemText primary="Organisationen" />
-        </ListItem>
-      </Link>
       <Link as='/ueber-uns' href='/AboutPage' passHref>
         <ListItem button component='a'>
           <ListItemText primary="Über uns" />
         </ListItem>
       </Link>
+      <Link as='/organisationen' href='/OrganizationsPage' passHref>
+        <ListItem button component='a'>
+          <ListItemText primary="Organisationen" />
+        </ListItem>
+      </Link>
+      <ListItem button
+                component='a'
+                target='_blank'
+                href="https://docs.google.com/forms/d/e/1FAIpQLScckSkwEbDhGi5jjKB3OvYdrncpcWU6H7e_lgr7458siHCR5Q/viewform">
+        <ListItemText primary="Event eintragen" />
+      </ListItem>
     </List>
   </DrawerMinWidth>
 )
