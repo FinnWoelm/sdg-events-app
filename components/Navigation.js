@@ -113,6 +113,13 @@ class Navigation extends Component {
                     Event eintragen
                   </Typography>
                 </ToolbarButton>
+                <ToolbarButton
+                  target='_blank'
+                  href='https://docs.google.com/forms/d/e/1FAIpQLSdMV3Axp9qqZr-qSg9xmwtwil1MRGkEVyOwscS1xGlcx9yfPw/viewform'>
+                  <Typography variant="h6" color="inherit">
+                    Feedback
+                  </Typography>
+                </ToolbarButton>
               </div>
             </Hidden>
           </Flex>

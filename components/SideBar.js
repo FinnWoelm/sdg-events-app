@@ -35,6 +35,12 @@ const SideBar = ({ open, onClose }) => (
                 href="https://docs.google.com/forms/d/e/1FAIpQLScckSkwEbDhGi5jjKB3OvYdrncpcWU6H7e_lgr7458siHCR5Q/viewform">
         <ListItemText primary="Event eintragen" />
       </ListItem>
+      <ListItem button
+                component='a'
+                target='_blank'
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdMV3Axp9qqZr-qSg9xmwtwil1MRGkEVyOwscS1xGlcx9yfPw/viewform">
+        <ListItemText primary="Feedback" />
+      </ListItem>
     </List>
   </DrawerMinWidth>
 )
